@@ -2,7 +2,7 @@
 
 namespace Clarissa.Entities.Customer
 {
-    public class Customer
+    public class User
     {
         public Guid CustomerId { get; set; }
 

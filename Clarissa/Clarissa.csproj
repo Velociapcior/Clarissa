@@ -24,7 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\components\controls\editableLabel.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\controls\editableLabel.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\User.tsx" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
