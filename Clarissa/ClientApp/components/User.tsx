@@ -6,8 +6,12 @@ export class User extends React.Component<RouteComponentProps<{}>, {}> {
     render() {
         return (
             <div className="wrapper">
-                <EditableLabel id="firstName" text="Pierwsze Imię" name="FirstName" value="dupa" placeholder="Podaj swoje imie..." />
-            </div>
+                <EditableLabel id="firstName" text="Pierwsze imię" name="FirstName" placeholder="Podaj swoje imię..." />
+                <EditableLabel id="secondName" text="Drugie imię" name="FirstName" placeholder="Podaj swoje drugie imię..." />
+                <EditableLabel id="dateOfBirth" text="Data urodzenia" name="DateOfBirth" placeholder="Podaj datę urodzenia..." />
+                <EditableLabel id="" text="" name="" placeholder="" />
+                <EditableLabel id="" text="" name="" placeholder="" />
+            </div >
         );
     }
 }
