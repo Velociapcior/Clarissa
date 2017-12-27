@@ -49,28 +49,30 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
         return (
             <div className="form-group col-md-12">
                 <label className="col-md-8">{this.props.text}</label>
-                <div className="col-md-2">
-                    <input
-                        onClick={() => this.handleClick()}
-                        onChange={(e: any) => this.handleChange(e)}
-                        className="form-control"
-                        type="text"
-                        name={this.props.nameFirst}
-                        id={this.props.idFirst}
-                        placeholder={this.props.placeholderFirst}
-                    />
-                </div>
-
-                <div className="col-md-1">
-                    <input
-                        onClick={() => this.handleClick()}
-                        onChange={(e: any) => this.handleChange(e)}
-                        className="form-control col-md-1"
-                        type="text"
-                        name={this.props.nameSecond}
-                        id={this.props.idSecond}
-                        placeholder={this.props.placeholderSecond}
-                    />
+                <div className="col-md-3">
+                    <div className="col-md-5 col-sm-5 col-xs-5 no-padding">
+                        <input 
+                            onClick={() => this.handleClick()}
+                            onChange={(e: any) => this.handleChange(e)}
+                            className="form-control"
+                            type="text"
+                            name={this.props.nameFirst}
+                            id={this.props.idFirst}
+                            placeholder={this.props.placeholderFirst}
+                        />
+                    </div>
+                    <h4 className="col-md-2 col-sm-2 col-xs-2">{this.props.separator}</h4>
+                    <div className="col-md-5 col-sm-5 col-xs-5 no-padding">
+                        <input
+                            onClick={() => this.handleClick()}
+                            onChange={(e: any) => this.handleChange(e)}
+                            className="form-control col-md-1"
+                            type="text"
+                            name={this.props.nameSecond}
+                            id={this.props.idSecond}
+                            placeholder={this.props.placeholderSecond}
+                        />
+                    </div>
                 </div>
             </div>);
     }
