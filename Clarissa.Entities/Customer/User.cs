@@ -8,7 +8,9 @@ namespace Clarissa.Entities.Customer
 
         public string FirstName { get; set; }
 
-        public string SecondName { get; set; }            
+        public string SecondName { get; set; }
+    
+        public string PersonalId { get; set; }
         
         public Address Address { get; set; }
 

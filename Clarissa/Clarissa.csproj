@@ -24,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\components\controls\countryDropdown.tsx" />
+    <None Remove="ClientApp\components\controls\doubleValueEditableLabel.tsx" />
     <None Remove="ClientApp\components\controls\editableLabel.tsx" />
   </ItemGroup>
 
@@ -32,7 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\controls\countryDropdown.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\editableLabel.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\doubleValueEditableLabel.tsx" />
     <TypeScriptCompile Include="ClientApp\components\User.tsx" />
   </ItemGroup>
 
