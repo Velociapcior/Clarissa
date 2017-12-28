@@ -8,6 +8,8 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
         this.state = {
             clicked: false,
             value: this.props.value,
+            valueFirst: "",
+            valueSecond: ""
         }
     }
 
@@ -22,12 +24,22 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
     }
 
     handleChange(e: any) {
+        console.log(e.value);
+        console.log(e.target.id);
+
         if (e.target.id === this.props.idFirst) {
             this.setState({ valueFirst: e.target.value });
         }
         else if (e.target.id === this.props.idSecond) {
             this.setState({ valueSecond: e.target.value });
         }
+
+        console.log("Value first: " + this.state.valueFirst);
+        console.log("Value second: " + this.state.valueSecond);
+
+        this.buildValue();
+
+        console.log("Value: " + this.state.value);
     }
 
     buildValue() {
@@ -48,6 +60,7 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
     renderInput() {
         return (
             <div className="form-group col-md-12">
+                <input type="text" id={this.props.id} name={this.props.name} value={this.state.value} hidden />
                 <label className="col-md-8">{this.props.text}</label>
                 <div className="col-md-3">
                     <div className="col-md-5 col-sm-5 col-xs-5 no-padding">

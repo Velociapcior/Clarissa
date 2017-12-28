@@ -12,6 +12,8 @@ namespace Clarissa.Entities.Customer
     
         public string PersonalId { get; set; }
         
+        public string PhoneNumber { get; set; }
+
         public Address Address { get; set; }
 
         public int BankNumber { get; set; }

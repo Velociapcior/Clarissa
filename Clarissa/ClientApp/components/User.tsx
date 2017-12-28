@@ -25,6 +25,8 @@ export class User extends React.Component<RouteComponentProps<{}>, {}> {
                 <EditableLabel id="city" text="Miasto" name="City" placeholder="Podaj miasto zamieszkania..." />
                 <EditableLabel id="streetName" text="Ulica" name="StreetName" placeholder="Podaj nazwę ulicy..." />
                 <DoubleValueEditableLabel
+                    id="addressNumber"
+                    name="AddressNumber"
                     idFirst="streetNumber"
                     idSecond="flatNumber"
                     nameFirst="StreetNumber"
@@ -32,7 +34,18 @@ export class User extends React.Component<RouteComponentProps<{}>, {}> {
                     placeholderFirst="Nr domu"
                     placeholderSecond="Nr mieszkania"
                     text="Nr domu / nr mieszkania"
-                    separator="/"/>
+                    separator="/" />
+                <DoubleValueEditableLabel
+                    id="zipCode"
+                    name="ZipCode"
+                    idFirst="zipCodeFirst"
+                    idSecond="zipCodeSecond"
+                    nameFirst="zipCodeFirst"
+                    nameSecond="zipCodeSecond"
+                    placeholderFirst="Kod"
+                    placeholderSecond="Kod"
+                    text="Kod pocztowy"
+                    separator="-" />
                 <EditableLabel id="" text="" name="" placeholder="" />
             </div >
         );
