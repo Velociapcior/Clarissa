@@ -6,7 +6,7 @@ export class CountryDropdown extends React.Component<any, any> {
             <div className="form-group col-md-12">
                 <label className="col-md-8" htmlFor={this.props.id}>{this.props.text}</label>
                 <div className="col-md-3">
-                    <select className="form-control" id={this.props.id} name={this.props.name}>
+                    <select className="form-control" id={this.props.id} name={this.props.name} defaultValue="Poland">
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland_Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -182,7 +182,7 @@ export class CountryDropdown extends React.Component<any, any> {
                         <option value="Peru">Peru</option>
                         <option value="Philippines">Philippines</option>
                         <option value="Pitcairn">Pitcairn</option>
-                        <option value="Poland" selected>Polska</option>
+                        <option value="Poland">Polska</option>
                         <option value="Portugal">Portugal</option>
                         <option value="Puerto_Rico">Puerto Rico</option>
                         <option value="Qatar">Qatar</option>
