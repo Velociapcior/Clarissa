@@ -5,10 +5,6 @@ import { observer } from "mobx-react";
 export class EditableLabel extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-
-        if (this.props.store.value === "") {
-            this.props.store.clicked = true;
-        }
     }
 
     handleClick() {
@@ -45,7 +41,7 @@ export class EditableLabel extends React.Component<any, any> {
     render() {
         return (
             <div>
-                {this.props.store.clicked  ? this.renderInput() : this.renderLabel()}
+                {this.props.store.hasValue || this.props.store.clicked ? this.renderInput() : this.renderLabel()}
             </div>
         );
     }

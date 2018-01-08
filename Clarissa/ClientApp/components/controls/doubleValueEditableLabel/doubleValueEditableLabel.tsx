@@ -9,7 +9,7 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
     }
 
     handleClick() {
-        this.props.store.value = "";
+        this.props.store.clicked = true;
     }
 
     handleChange(e: any) {
@@ -77,7 +77,7 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
 
     render() {
         return (<div>
-                    {this.props.store.clicked ? this.renderInput() : this.renderLabel()}
+                    {this.props.store.clicked || this.props.store.hasValue ? this.renderInput() : this.renderLabel()}
                 </div>);
     }
 

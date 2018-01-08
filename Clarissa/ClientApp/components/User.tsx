@@ -23,7 +23,6 @@ export class User extends React.Component<RouteComponentProps<{}>, UserData> {
         this.firstNameStore.value = data.firstName;
         this.secondNameStore.value = data.secondName;
         this.dateOfBirthStore.value = data.dateOfBirth;
-        this.personalIdStore.value = data.personalId;
         this.bankNumberStore.value = data.bankNumber;
         this.cityStore.value = data.address.city;
         this.streetNameStore.value = data.address.streetName;
