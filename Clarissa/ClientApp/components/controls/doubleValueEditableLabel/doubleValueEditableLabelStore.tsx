@@ -1,7 +1,10 @@
 ﻿import { observable, computed } from "mobx";
 
 export class DoubleValueEditableLabelStore {
-    @observable clicked = false;
+    @computed
+    get clicked() {
+        return this.value === "";
+    }
     @observable value = "";
     @observable valueFirst = "";
     @observable valueSecond ="";

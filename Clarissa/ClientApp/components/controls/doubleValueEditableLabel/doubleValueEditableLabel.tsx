@@ -8,17 +8,8 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
         super(props);
     }
 
-    componentWillMount() {
-        if (this.props.store.value === "") {
-            this.props.store.clicked = true;
-        }
-
-        console.log(this.props.store.value);
-        console.log(this.props.store.clicked);
-    }
-
     handleClick() {
-        this.props.store.clicked = true;
+        this.props.store.value = "";
     }
 
     handleChange(e: any) {

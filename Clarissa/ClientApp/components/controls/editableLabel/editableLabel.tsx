@@ -6,9 +6,6 @@ export class EditableLabel extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
 
-    }
-
-    componentWillMount() {
         if (this.props.store.value === "") {
             this.props.store.clicked = true;
         }

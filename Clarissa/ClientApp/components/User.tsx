@@ -1,4 +1,5 @@
 ﻿import * as React from "react";
+import "isomorphic-fetch";
 import { RouteComponentProps } from "react-router";
 import { EditableLabel } from "./controls/editableLabel/editableLabel";
 import { EditableLabelStore } from "./controls/editableLabel/editableLabelStore";
@@ -7,11 +8,11 @@ import { CountryDropdownStore } from "./controls/countryDropdown/countryDropdown
 import { DoubleValueEditableLabel } from "./controls/doubleValueEditableLabel/doubleValueEditableLabel";
 import { DoubleValueEditableLabelStore } from "./controls/doubleValueEditableLabel/doubleValueEditableLabelStore";
 
-export class User extends React.Component<RouteComponentProps<{}>, {}> {
+export class User extends React.Component<RouteComponentProps<{}>, UserData> {
     constructor(props: any) {
         super(props);
 
-        fetch("api/User/GetData")
+        fetch("api/UserData/GetData")
             .then(response => response.json() as Promise<UserData>)
             .then(data => {
                 this.saveDataToStore(data);

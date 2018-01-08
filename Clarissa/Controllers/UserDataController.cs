@@ -8,17 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Clarissa.Controllers
 {
-    public class UserController : Controller
+    [Route("api/[controller]")]
+    public class UserDataController : Controller
     {
-        [HttpGet]
-        public JsonResult GetData()
+        [HttpGet("[action]")]
+        public User GetData()
         {
             User user = new User
             {
                 Address = new Address
                 {
                     City = "Dupy Małe",
-                    Country = new RegionInfo("Poland"),
+                    Country = "Poland",
                     FlatNumber = "2",
                     StreetName = "Dupowa",
                     StreetNumber = "2",
@@ -33,7 +34,7 @@ namespace Clarissa.Controllers
                 SecondName = "Dupowaty"
             };
 
-            return Json(user);
+            return user;
         }
     }
 }

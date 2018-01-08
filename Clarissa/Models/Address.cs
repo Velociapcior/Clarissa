@@ -14,6 +14,6 @@ namespace Clarissa.Models
 
         public string ZipCode { get; set; }
 
-        public RegionInfo Country { get; set; }
+        public string Country { get; set; }
     }
 }
