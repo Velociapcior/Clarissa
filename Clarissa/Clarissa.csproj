@@ -12,6 +12,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,18 +30,20 @@
 
   <ItemGroup>
     <None Remove="ClientApp\components\controls\countryDropdown.tsx" />
+    <None Remove="ClientApp\components\controls\countryDropdown\countryDropdownStore.tsx" />
     <None Remove="ClientApp\components\controls\doubleValueEditableLabel.tsx" />
+    <None Remove="ClientApp\components\controls\doubleValueEditableLabel\doubleValueEditableLabelStore.tsx" />
     <None Remove="ClientApp\components\controls\editableLabel.tsx" />
+    <None Remove="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\components\controls\countryDropdown.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\controls\editableLabel.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\controls\doubleValueEditableLabel.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\countryDropdown\countryDropdown.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\countryDropdown\countryDropdownStore.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\doubleValueEditableLabel\doubleValueEditableLabelStore.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\editableLabel\editableLabel.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\doubleValueEditableLabel\doubleValueEditableLabel.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
     <TypeScriptCompile Include="ClientApp\components\User.tsx" />
   </ItemGroup>
 

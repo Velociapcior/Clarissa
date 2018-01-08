@@ -1,70 +1,62 @@
 ﻿import * as React from "react";
+import { observer } from "mobx-react";
 
+@observer
 export class DoubleValueEditableLabel extends React.Component<any, any> {
 
     constructor(props: any) {
         super(props);
-
-        this.state = {
-            clicked: false,
-            value: this.props.value,
-            valueFirst: "",
-            valueSecond: ""
-        }
     }
 
-    componentDidMount() {
-        if (this.props.value == null) {
-            this.setState({ clicked: true });
+    componentWillMount() {
+        if (this.props.store.value === "") {
+            this.props.store.clicked = true;
         }
+
+        console.log(this.props.store.value);
+        console.log(this.props.store.clicked);
     }
 
     handleClick() {
-        this.setState({ clicked: true });
+        this.props.store.clicked = true;
     }
 
     handleChange(e: any) {
-        console.log(e.value);
-        console.log(e.target.id);
-
         if (e.target.id === this.props.idFirst) {
-            this.setState({ valueFirst: e.target.value });
+            this.props.store.valueFirst = e.target.value;
+        } else if (e.target.id === this.props.idSecond) {
+            this.props.store.valueSecond = e.target.value;
         }
-        else if (e.target.id === this.props.idSecond) {
-            this.setState({ valueSecond: e.target.value });
-        }
-
-        console.log("Value first: " + this.state.valueFirst);
-        console.log("Value second: " + this.state.valueSecond);
 
         this.buildValue();
-
-        console.log("Value: " + this.state.value);
     }
 
     buildValue() {
-        if (this.state.valueSecond === "") {
-            this.setState(
-                {
-                    value: this.state.valueFirst
-                });
+        if (this.props.store.valueSecond === "") {
+            this.props.store.value = this.props.store.valueFirst;
         } else {
-            this.setState(
-                {
-                    value: this.state.valueFirst + this.props.separator + this.state.valueSecond
-                });
+            this.props.store.value = this.props.store.valueFirst + this.props.separator + this.props.store.valueSecond;
         }
+    }
 
+    renderLabel() {
+        return (
+            <div className="form-group col-md-12">
+                <input type="text" id={this.props.id} name={this.props.name} value={this.props.store.value} readOnly hidden />
+                <label className="col-md-8">{this.props.text}</label>
+                <span className="col-md-4" onClick={() => this.handleClick()}>{this.props.store.value}</span>
+            </div>
+        );
     }
 
     renderInput() {
         return (
             <div className="form-group col-md-12">
-                <input type="text" id={this.props.id} name={this.props.name} value={this.state.value} hidden />
+                <input type="text" id={this.props.id} name={this.props.name} value={this.props.store.value} readOnly hidden />
                 <label className="col-md-8">{this.props.text}</label>
                 <div className="col-md-3">
                     <div className="col-md-5 col-sm-5 col-xs-5 no-padding">
-                        <input 
+                        <input
                             onClick={() => this.handleClick()}
                             onChange={(e: any) => this.handleChange(e)}
                             className="form-control"
@@ -72,6 +64,7 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
                             name={this.props.nameFirst}
                             id={this.props.idFirst}
                             placeholder={this.props.placeholderFirst}
+                            value={this.props.store.valueFirst}
                         />
                     </div>
                     <h4 className="col-md-2 col-sm-2 col-xs-2">{this.props.separator}</h4>
@@ -84,6 +77,7 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
                             name={this.props.nameSecond}
                             id={this.props.idSecond}
                             placeholder={this.props.placeholderSecond}
+                            value={this.props.store.valueSecond}
                         />
                     </div>
                 </div>
@@ -91,7 +85,9 @@ export class DoubleValueEditableLabel extends React.Component<any, any> {
     }
 
     render() {
-        return (this.renderInput());
+        return (<div>
+                    {this.props.store.clicked ? this.renderInput() : this.renderLabel()}
+                </div>);
     }
 
 }

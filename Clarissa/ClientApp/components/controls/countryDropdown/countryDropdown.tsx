@@ -1,12 +1,18 @@
 ﻿import * as React from "react";
+import { observer } from "mobx-react";
 
+@observer
 export class CountryDropdown extends React.Component<any, any> {
+    handleChange(e: any) {
+        this.props.store.value = e.target.value;
+    }
+    
     render() {
         return (
             <div className="form-group col-md-12">
                 <label className="col-md-8" htmlFor={this.props.id}>{this.props.text}</label>
                 <div className="col-md-3">
-                    <select className="form-control" id={this.props.id} name={this.props.name} defaultValue="Poland">
+                    <select className="form-control" id={this.props.id} name={this.props.name} onChange={(e: any) => this.handleChange(e)} defaultValue="Poland">
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland_Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -253,6 +259,6 @@ export class CountryDropdown extends React.Component<any, any> {
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                 </div>
-            </div>)
+            </div>);
     }
 }
