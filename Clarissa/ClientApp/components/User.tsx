@@ -24,12 +24,16 @@ export class User extends React.Component<RouteComponentProps<{}>, UserData> {
         this.secondNameStore.value = data.secondName;
         this.dateOfBirthStore.value = data.dateOfBirth;
         this.bankNumberStore.value = data.bankNumber;
+        this.personalIdStore.value = data.personalId;
         this.cityStore.value = data.address.city;
         this.streetNameStore.value = data.address.streetName;
         this.addressNumberStore.value = data.address.streetNumber + "/" + data.address.flatNumber;
         this.addressNumberStore.valueFirst = data.address.streetNumber;
         this.addressNumberStore.valueSecond = data.address.flatNumber;
+        this.zipCodeStore.value = data.address.zipCode;
 
+        const zipCodeArray = data.address.zipCode.split("-");
+        [this.zipCodeStore.valueFirst, this.zipCodeStore.valueSecond] = zipCodeArray;
     }
 
     firstNameStore = new EditableLabelStore;
