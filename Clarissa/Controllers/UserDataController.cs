@@ -36,5 +36,11 @@ namespace Clarissa.Controllers
 
             return user;
         }
+
+        [HttpPost("[Action]")]
+        public string SaveData(string data)
+        {
+            return "success";
+        }
     }
 }

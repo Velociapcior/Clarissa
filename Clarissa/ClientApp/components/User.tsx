@@ -7,10 +7,14 @@ import { CountryDropdown } from "./controls/countryDropdown/countryDropdown";
 import { CountryDropdownStore } from "./controls/countryDropdown/countryDropdownStore";
 import { DoubleValueEditableLabel } from "./controls/doubleValueEditableLabel/doubleValueEditableLabel";
 import { DoubleValueEditableLabelStore } from "./controls/doubleValueEditableLabel/doubleValueEditableLabelStore";
+import { SubmitButtonStore } from "./controls/submitButton/submitButtonStore";
+import { SubmitButton } from "./controls/submitButton/submitButton";
 
 export class User extends React.Component<RouteComponentProps<{}>, UserData> {
     constructor(props: any) {
         super(props);
+
+        this.submitButtonStore.submitAddress = "api/UserData/GetData";
 
         fetch("api/UserData/GetData")
             .then(response => response.json() as Promise<UserData>)
@@ -45,7 +49,7 @@ export class User extends React.Component<RouteComponentProps<{}>, UserData> {
     streetNameStore = new EditableLabelStore;
     addressNumberStore = new DoubleValueEditableLabelStore;
     zipCodeStore = new DoubleValueEditableLabelStore;
-
+    submitButtonStore = new SubmitButtonStore;
     countryDropdownStore = new CountryDropdownStore;
 
     render() {
@@ -91,6 +95,9 @@ export class User extends React.Component<RouteComponentProps<{}>, UserData> {
                     placeholderSecond="Kod"
                     text="Kod pocztowy"
                     separator="-" />
+                <div className="col-md-offset-10 col-md-2">
+                    <SubmitButton text="Zapisz" store={this.submitButtonStore}/>
+                </div>
             </div >
         );
     }

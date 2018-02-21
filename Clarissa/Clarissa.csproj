@@ -35,6 +35,8 @@
     <None Remove="ClientApp\components\controls\doubleValueEditableLabel\doubleValueEditableLabelStore.tsx" />
     <None Remove="ClientApp\components\controls\editableLabel.tsx" />
     <None Remove="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
+    <None Remove="ClientApp\components\controls\submitButton\submitButton.tsx" />
+    <None Remove="ClientApp\components\controls\submitButton\submitButtonStore.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,7 +46,13 @@
     <TypeScriptCompile Include="ClientApp\components\controls\editableLabel\editableLabel.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\doubleValueEditableLabel\doubleValueEditableLabel.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\submitButton\submitButton.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\submitButton\submitButtonStore.tsx" />
     <TypeScriptCompile Include="ClientApp\components\User.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
