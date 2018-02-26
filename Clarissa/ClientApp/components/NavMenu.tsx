@@ -9,8 +9,8 @@ export class NavMenu extends React.Component<{}, {}> {
             </p>
             <ul className="menu-list">
                 <li>
-                 <NavLink to={"/Reading"} className="navbar-item" exact activeClassName="is-active">
-                    <span>Reading</span>
+                 <NavLink to={"/ReadingsList"} exact activeClassName="is-active">
+                    Reading List
                 </NavLink></li>
             </ul>
             <p className="menu-label">

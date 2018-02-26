@@ -50,6 +50,7 @@ export class Layout extends React.Component<LayoutProps, {}> {
                                         <NavLink to={"/ReadingsList"} className="navbar-item" exact activeClassName="is-active">
                                             <span>ReadingsList</span>
                                         </NavLink>
+
                                     </div>
                                 </div>
                             </div>
