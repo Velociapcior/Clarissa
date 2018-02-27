@@ -37,6 +37,8 @@
     <None Remove="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
     <None Remove="ClientApp\components\controls\readingContent\readingContent.tsx" />
     <None Remove="ClientApp\components\controls\readingContent\readingContentStore.tsx" />
+    <None Remove="ClientApp\components\controls\readingQuestion\readingQuestion.tsx" />
+    <None Remove="ClientApp\components\controls\readingQuestion\readingQuestionStore.tsx" />
     <None Remove="ClientApp\components\controls\submitButton\submitButton.tsx" />
     <None Remove="ClientApp\components\controls\submitButton\submitButtonStore.tsx" />
     <None Remove="ClientApp\components\Reading.tsx" />
@@ -52,6 +54,8 @@
     <TypeScriptCompile Include="ClientApp\components\controls\editableLabel\editableLabelStore.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\readingContent\readingContent.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\readingContent\readingContentStore.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\readingQuestion\readingQuestion.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\readingQuestion\readingQuestionStore.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\submitButton\submitButton.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\submitButton\submitButtonStore.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Reading.tsx" />

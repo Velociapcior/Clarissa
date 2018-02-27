@@ -10,8 +10,7 @@ export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
         return (
             <div>
-                <nav className="navbar is-dark" role="navigation">
-                    <div className="container">
+                <nav className="navbar is-dark is-bold" role="navigation">
                         <div className="navbar-brand">
                             <i className="fa fa-btc"></i>
                         </div>
@@ -55,14 +54,13 @@ export class Layout extends React.Component<LayoutProps, {}> {
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </nav>
                 <div className="columns">
                     <div className="column is-2">
                             <NavMenu />
                     </div>
-                    <div className="column">
-                        <div className="container is-fluid">
+                    <div className="column is-10">
+                        <div className="container">
                             {this.props.children}
                         </div>
                     </div>
