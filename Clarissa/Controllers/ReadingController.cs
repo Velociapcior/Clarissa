@@ -46,5 +46,20 @@ namespace Clarissa.Controllers
 
       return reading;
     }
+
+    public ReadingQuestion GetReadingQuestion(string readingId)
+    {
+      ReadingQuestion readingQuestion = new ReadingQuestion
+      {
+        ReadingId = Guid.Parse(readingId),
+        OptionFirst = "Lorem",
+        OptionFirstReadingId = Guid.NewGuid(),
+        OptionSecond = "Ipsum",
+        OptionSecondReadingId = Guid.NewGuid(),
+        Question = "Phasellus quis finibus dolor.Donec fermentum lectus sit amet"
+      };
+
+      return readingQuestion;
+    }
   }
 }
